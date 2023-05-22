@@ -1,0 +1,21 @@
+﻿@model APIConsumeAndCrud.Models.TodoEntity
+<form asp-action="UpdateTodo">
+    <div class="form-group">
+        <label for="todoId">Title</label>
+        <input asp-for="Id" type="text" class="form-control" id="todoId" readonly>
+    </div>
+    <div class="form-group">
+        <label for="todoTitle">Title</label>
+        <input asp-for="Title" type="text" class="form-control" id="todoTitle" placeholder="Title">
+    </div>
+    <div class="form-group">
+        <label for="todoDescription">Description</label>
+        <input asp-for="Description" type="text" class="form-control" id="todoDescription" placeholder="Description">
+    </div>
+    <div class="form-group form-check">
+        <label class="form-check-label">
+            <input class="form-check-input" asp-for="isComplete" /> @Html.DisplayNameFor(model => model.isComplete)
+        </label>
+    </div>
+    <button type="submit" class="btn btn-primary">Update</button>
+</form>

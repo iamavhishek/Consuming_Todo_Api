@@ -1,0 +1,33 @@
+﻿@model IEnumerable<TodoEntity>
+
+@{
+    ViewData["Title"] = "Fetching Data from WebAPI";
+}
+
+<a class="btn btn-primary" asp-action="AddTodo" asp-controller="Home">Add Todo</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Title</th>
+            <th scope="col">Description</th>
+            <th scope="col">Is Complete</th>
+            <th scope="col">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var row in Model)
+        {
+            <tr>
+                <td>@row.Id</td>
+                <td>@row.Title</td>
+                <td>@row.Description</td>
+                <td>@row.isComplete</td>
+                <td>
+                    <a class="btn btn-outline-success" asp-action="EditTodo" asp-controller="Home" asp-route-id="@row.Id">Edit</a>
+                    <a class="btn btn-outline-danger" asp-action="Delete" asp-route-id="@row.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
