@@ -1,0 +1,16 @@
+﻿@model APIConsumeAndCrud.Models.TodoEntity
+@{
+    ViewData["Title"] = "Add User";
+}
+
+<form asp-action="AddTodo">
+    <div class="form-group">
+        <label for="todoTitle">Title</label>
+        <input asp-for="Title" type="text" class="form-control" id="todoTitle" placeholder="Title">
+    </div>
+    <div class="form-group">
+        <label for="todoDescription">Description</label>
+        <input asp-for="Description" type="text" class="form-control" id="todoDescription" placeholder="Description">
+    </div>
+    <button type="submit" class="btn btn-primary">Add</button>
+</form>

@@ -1,0 +1,21 @@
+﻿@model TodoEntity
+
+<h2>Delete Todo Item</h2>
+
+<p>Are you sure you want to delete the following Todo item?</p>
+
+<div>
+    <h4>Title:</h4>
+    <p>@Model.Title</p>
+</div>
+
+<div>
+    <h4>Description:</h4>
+    <p>@Model.Description</p>
+</div>
+
+@using (Html.BeginForm("Delete", "Home", new { id = Model.Id }, FormMethod.Post))
+{
+    <input type="submit" value="Delete" class="btn btn-danger" />
+    @Html.ActionLink("Cancel", "Index", "Home", null, new { @class = "btn btn-secondary" })
+}
